@@ -1,0 +1,25 @@
+header {
+  background-color: #823900;
+  padding: 16px 128px;
+  display: flex;
+  justify-content: space-between;
+  // position: fixed;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+}
+.header-logo {
+  width: 138px;
+  height: 39px;
+}
+.header-nav {
+  text-align: right;
+  width: 365px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+.header-nav > a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
