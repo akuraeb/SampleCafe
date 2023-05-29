@@ -8,10 +8,22 @@ header {
   height: 70px;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  header {
+    padding-left: 20px;
+    padding-right: 25px;
+  }
+}
 
 .header-logo {
   width: 138px;
   height: 39px;
+}
+@media screen and (max-width: 768px) {
+  .header-logo {
+    width: 103px;
+    height: auto;
+  }
 }
 
 .header-nav {
@@ -21,9 +33,49 @@ header {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+}
 .header-nav > a {
   text-decoration: none;
   color: #FFFFFF;
+}
+
+.hamburger {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: relative;
+    background-color: #823900;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    /*ボタン内側*/
+  }
+  .hamburger > span {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    width: 45%;
+  }
+  .hamburger > span:nth-of-type(1) {
+    top: 15px;
+  }
+  .hamburger > span:nth-of-type(2) {
+    top: 23px;
+  }
+  .hamburger > span:nth-of-type(3) {
+    top: 31px;
+  }
 }
 
 .main-visual {
@@ -34,6 +86,11 @@ header {
   background-size: cover;
   width: 100%;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  .main-visual {
+    height: 261px;
+  }
 }
 .main-visual > h1 {
   color: #FFFFFF;
@@ -48,12 +105,24 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media screen and (max-width: 768px) {
+  .main-visual > h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
 
 .container {
   max-width: 1024px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 335px;
+    width: 100%;
+  }
 }
 
 #menu {
@@ -67,12 +136,26 @@ header {
   text-align: center;
   margin-bottom: 40px;
 }
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+}
 
 .menu-content {
   display: flex;
   justify-content: space-between;
   gap: 32px;
   margin: 0 auto 60px;
+}
+@media screen and (max-width: 768px) {
+  .menu-content {
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 46px;
+    padding-top: 40px;
+  }
 }
 
 .menu-item h2 {
@@ -109,14 +192,31 @@ address {
   background-color: #F6F6F6;
   padding: 60px 0;
 }
+@media screen and (max-width: 768px) {
+  address {
+    padding: 60px 0 71px;
+  }
+}
 
 .access-content {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 768px) {
+  .access-content {
+    flex-direction: column;
+    padding-top: 37px;
+  }
+}
 .access-content > div {
   width: 472px;
   height: 345px;
+}
+@media screen and (max-width: 768px) {
+  .access-content > div {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .access-img {
@@ -126,15 +226,42 @@ address {
 .access-item {
   padding: 35px 0;
 }
+@media screen and (max-width: 768px) {
+  .access-item {
+    padding: 21.8px 0 0 0;
+  }
+}
 .access-item > div {
   width: 222px;
   height: 55px;
   margin-bottom: 31px;
 }
+@media screen and (max-width: 768px) {
+  .access-item > div {
+    width: 144px;
+    height: 38px;
+    margin-bottom: 17px;
+  }
+}
 .access-item > p {
   font-size: 16px;
   text-align: left;
-  margin: 0 4px 12px 0;
+  padding: 0 4px 12px;
+}
+@media screen and (max-width: 768px) {
+  .access-item > p {
+    font-size: 15px;
+    margin: 0;
+    padding: 0 0 5px;
+  }
+}
+.access-item > p:nth-of-type(3) {
+  padding-bottom: 32px;
+}
+@media screen and (max-width: 768px) {
+  .access-item > p:nth-of-type(3) {
+    padding-bottom: 22px;
+  }
 }
 .access-item > a {
   display: block;
@@ -148,10 +275,19 @@ address {
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
-  margin-top: 31px;
   position: relative;
 }
-.access-item .access-btn::after {
+@media screen and (max-width: 768px) {
+  .access-item > a {
+    width: 320px;
+    font-size: 16px;
+    font-family: body;
+    letter-spacing: 1.6px;
+    margin: 0 auto;
+    border: 1px solid #707070;
+  }
+}
+.access-item > a::after {
   content: "";
   width: 20px;
   height: 20px;
@@ -170,4 +306,11 @@ footer {
   color: #823900;
   font-size: 16px;
   line-height: 56px;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+  }
 }

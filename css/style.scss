@@ -1,6 +1,12 @@
 $color: #823900;
 $font: "游明朝", "YuMincho", serif;
 
+@mixin sp {
+  @media screen and (max-width:768px) {
+    @content;
+  }
+}
+// ヘッダー
 header {
   background-color: $color;
   padding: 16px 128px;
@@ -9,10 +15,18 @@ header {
   width: 100%;
   height: 70px;
   align-items: center;
+  @include sp {
+    padding-left: 20px;
+    padding-right: 25px;
+  }
 }
 .header-logo {
   width: 138px;
   height: 39px;
+  @include sp {
+    width: 103px;
+    height: auto;
+  }
 }
 .header-nav {
   text-align: right;
@@ -21,12 +35,48 @@ header {
   display: flex;
   align-items: center;
 
+  @include sp {
+    display: none;
+  }
+
   & > a {
     text-decoration: none;
     color: #FFFFFF;
   }
 }
-
+.hamburger{
+  display: none;
+  @include sp {
+    display: block;
+    position: relative;
+    background-color: $color;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;      
+    /*ボタン内側*/
+    & > span{
+      display: inline-block;
+      transition: all .4s;
+      position: absolute;
+      left: 14px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: #FFFFFF;
+      width: 45%;
+    }
+    & > span:nth-of-type(1) {
+      top:15px; 
+    }
+    & > span:nth-of-type(2) {
+      top:23px;
+    }
+    & > span:nth-of-type(3) {
+      top:31px;
+    }
+  }
+}
+// メインビジュアル
 .main-visual {
   height: 725px;
   width: 100%;
@@ -35,6 +85,9 @@ header {
   background-size: cover;
   width: 100%;
   position: relative;
+  @include sp {
+    height: 261px;
+  }
   
   & > h1 {
     color: #FFFFFF;
@@ -48,7 +101,10 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    @include sp {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 }
 .container {
@@ -56,6 +112,10 @@ header {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  @include sp {
+    max-width: 335px;
+    width: 100%;
+  }
 }
 #menu {
   margin-top: 60px;
@@ -66,12 +126,22 @@ header {
   color: $color;
   text-align: center;
   margin-bottom: 40px;
+  @include sp {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
 }
 .menu-content {
   display: flex;
   justify-content: space-between;
   gap: 32px;
   margin: 0 auto 60px;
+  @include sp {
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 46px;
+    padding-top: 40px;
+  }
 }
 .menu-item {
   & h2 {
@@ -104,17 +174,28 @@ header {
     height: 50px;
   }
 }
+// access
 address {
   background-color: #F6F6F6;
   padding: 60px 0;
+  @include sp {
+    padding: 60px 0 71px;
+  }
 }
 .access-content {
   display: flex;
   justify-content: space-between;
-
+  @include sp {
+    flex-direction: column;
+    padding-top: 37px;
+  }
   & > div {
     width: 472px;
     height: 345px;
+    @include sp {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 .access-img {
@@ -122,16 +203,36 @@ address {
 }
 .access-item {
   padding: 35px 0;
+  @include sp {
+    padding: 21.8px 0 0 0;
+  }
 
   & > div {
     width: 222px;
     height: 55px;
     margin-bottom: 31px;
+    @include sp {
+      width: 144px;
+      height: 38px;
+      margin-bottom: 17px;
+    }
   }
   & > p {
     font-size: 16px;
     text-align: left;
-    margin: 0 4px 12px 0;
+    padding: 0 4px 12px;
+    @include sp {
+      font-size: 15px;
+      margin: 0;
+      padding: 0 0 5px;
+    }
+    &:nth-of-type(3){
+      padding-bottom: 32px;
+      @include sp {
+        padding-bottom: 22px;
+      }
+    }
+    
   }
   & > a {
     display: block;
@@ -145,22 +246,29 @@ address {
     border-radius: 8px;
     text-decoration: none;
     text-align: center;
-    margin-top: 31px;
     position: relative;    
-
-  }
-  .access-btn::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-image: url(../../img/mail-icon.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    margin-left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    @include sp {
+      width: 320px;
+      font-size: 16px;
+      font-family: body;
+      letter-spacing: 1.6px;
+      margin: 0 auto;
+      border: 1px solid #707070;
+    }
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-image: url(../../img/mail-icon.png);
+      background-repeat: no-repeat;
+      position: absolute;
+      margin-left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
+// footer
 footer {
   height: 56px;
   text-align: center;
@@ -168,4 +276,9 @@ footer {
   color: $color;
   font-size: 16px;
   line-height: 56px;
+  @include sp {
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+  }
 }
