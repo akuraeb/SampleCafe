@@ -188,29 +188,29 @@ header {
   height: 50px;
 }
 
-address {
+#access {
   background-color: #F6F6F6;
   padding: 60px 0;
 }
 @media screen and (max-width: 768px) {
-  address {
+  #access {
     padding: 60px 0 71px;
   }
 }
 
 .access-content {
   display: flex;
-  justify-content: space-between;
+  gap: 80px;
 }
 @media screen and (max-width: 768px) {
   .access-content {
     flex-direction: column;
     padding-top: 37px;
+    gap: 0;
   }
 }
 .access-content > div {
   width: 472px;
-  height: 345px;
 }
 @media screen and (max-width: 768px) {
   .access-content > div {
@@ -223,47 +223,51 @@ address {
   box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15);
 }
 
-.access-item {
+address {
+  width: 472px;
+  height: 274px;
   padding: 35px 0;
 }
 @media screen and (max-width: 768px) {
-  .access-item {
+  address {
     padding: 21.8px 0 0 0;
+    width: auto;
+    height: auto;
   }
 }
-.access-item > div {
+address > div {
   width: 222px;
   height: 55px;
   margin-bottom: 31px;
 }
 @media screen and (max-width: 768px) {
-  .access-item > div {
+  address > div {
     width: 144px;
     height: 38px;
     margin-bottom: 17px;
   }
 }
-.access-item > p {
+address > p {
   font-size: 16px;
   text-align: left;
   padding: 0 4px 12px;
 }
 @media screen and (max-width: 768px) {
-  .access-item > p {
+  address > p {
     font-size: 15px;
     margin: 0;
     padding: 0 0 5px;
   }
 }
-.access-item > p:nth-of-type(3) {
+address > p:nth-of-type(3) {
   padding-bottom: 32px;
 }
 @media screen and (max-width: 768px) {
-  .access-item > p:nth-of-type(3) {
+  address > p:nth-of-type(3) {
     padding-bottom: 22px;
   }
 }
-.access-item > a {
+address > a {
   display: block;
   line-height: 60px;
   width: 420px;
@@ -278,7 +282,7 @@ address {
   position: relative;
 }
 @media screen and (max-width: 768px) {
-  .access-item > a {
+  address > a {
     width: 320px;
     font-size: 16px;
     font-family: body;
@@ -287,7 +291,7 @@ address {
     border: 1px solid #707070;
   }
 }
-.access-item > a::after {
+address > a::after {
   content: "";
   width: 20px;
   height: 20px;
